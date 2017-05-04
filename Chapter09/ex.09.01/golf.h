@@ -4,8 +4,8 @@ const int LEN = 40;
 
 struct golf
 {
-	char fullname[LEN];
-	int handicap;
+    char fullname[LEN];
+    int handicap;
 };
 
 // non-interactive version:
