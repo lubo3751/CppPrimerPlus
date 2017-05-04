@@ -15,26 +15,27 @@ void show_string(const char *, int n = 0);
 
 int main()
 {
-	show_string("first");
-	show_string("second", -2);
-	show_string("third");
-	show_string("fourth", 9);
+    show_string("first");
+    show_string("second", -2);
+    show_string("third");
+    show_string("fourth", 9);
     return 0;
 }
 
 void show_string(const char * s, int n)
 {
-	static int count = 0;
-	
-	if (n)
-	{
-		++count;
-		for (int i = 0; i < count; ++i)	
-			std::cout << s << std::endl;
+    static int count = 0;
+
+    if (n)
+    {
+        ++count;
+        for (int i = 0; i < count; ++i){	
+            std::cout << s << std::endl;
 	}
-	else
-	{
-		++count;
-		std::cout << s << std::endl;
-	}
+    }
+    else
+    {
+        ++count;
+        std::cout << s << std::endl;
+    }
 }
