@@ -16,36 +16,36 @@ void set_ptChAr(chaff * pChaffAr)
 void set_dross(chaff & ch, int i)
 {
     using std::cin;
-	using std::cout;
-	using std:: endl;
-	using std::strcpy;
+    using std::cout;
+    using std:: endl;
+    using std::strcpy;
 
     char dross_holder[20];
     cout << "Enter a dross" << i+1 << " name: ";
-	cin.get(dross_holder, 20);
-	// prompt user to reenter if nothing entered
-	while (strlen(dross_holder) == 0)
-	{
-		cin.clear();
-		cin.get();
-		cout << "Error. Nothing entered." << endl;
-		cout << "Enter a dross" << i+1 << " name: ";
-		cin.get(dross_holder, 20);
-	}
-	// discard remaining characters
-	while (cin.get() != '\n')
-		continue;
-	strcpy(ch.dross, 20, dross_holder);
+    cin.get(dross_holder, 20);
+    // prompt user to reenter if nothing entered
+    while (strlen(dross_holder) == 0)
+    {
+        cin.clear();
+        cin.get();
+        cout << "Error. Nothing entered." << endl;
+        cout << "Enter a dross" << i+1 << " name: ";
+        cin.get(dross_holder, 20);
+    }
+    // discard remaining characters
+    while (cin.get() != '\n')
+        continue;
+    strcpy(ch.dross, 20, dross_holder);
 }
 
 void set_slag(chaff & ch, int i)
 {
-	while (1)
+    while (1)
     {
         using std::cin;
-    	using std::cout;
-	    using std:: endl;
-	    using std::strcpy;
+        using std::cout;
+        using std:: endl;
+        using std::strcpy;
 
         cout << "Enter a slag" << i+1 << " number: ";
         cin >> ch.slag;
@@ -72,6 +72,6 @@ void show_ptChAr(chaff * pChaffAr)
     {
         std::cout << "dross" << i+1 << ": " << pChaffAr[i].dross << std::endl;
         std::cout << "slag" << i+1 << ": " << pChaffAr[i].slag << std::endl;
-	}
+    }
 }
 
