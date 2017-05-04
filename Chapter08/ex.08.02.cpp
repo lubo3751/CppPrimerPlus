@@ -15,46 +15,45 @@ argument and displays the contents of the structure. Use const where appropriate
 
 struct CandyBar
 {
-	std::string brand;
-	double weight;
-	int calories;
+    std::string brand;
+    double weight;
+    int calories;
 };
 
 void show(const CandyBar &);
-void set(CandyBar &, const char * s = "Millennium Munch", 
-		  double w = 2.85, int c = 350);
+void set(CandyBar &, const char * s = "Millennium Munch", double w = 2.85, int c = 350);
 
 int main()
 {
-	using namespace std;
-	CandyBar snack;
-	char name[] = "Snikers";
-	double weight = 2.75;
-	int calories = 345;
+    using namespace std;
+    CandyBar snack;
+    char name[] = "Snikers";
+    double weight = 2.75;
+    int calories = 345;
 
-	set(snack);
-	show(snack);
-	set(snack, name, weight, calories);
-	show(snack);
-	set(snack);
-	show(snack);
-	set(snack, name, weight, calories);
-	show(snack);
+    set(snack);
+    show(snack);
+    set(snack, name, weight, calories);
+    show(snack);
+    set(snack);
+    show(snack);
+    set(snack, name, weight, calories);
+    show(snack);
 
-	return 0;
+    return 0;
 }
 
 void set(CandyBar & candy, const char * s, double w, int c)
 {
-	candy.brand = s;
-	candy.weight = w;
-	candy.calories = c;
+    candy.brand = s;
+    candy.weight = w;
+    candy.calories = c;
 }
 
 void show(const CandyBar & candy)
 {
-	using namespace std;
-	cout << "brand name: " << candy.brand << endl
-		 << "weight: " << candy.weight << endl
-		 << "calories: " << candy.calories << endl;
+    using namespace std;
+    cout << "brand name: " << candy.brand << endl
+    cout << "weight: " << candy.weight << endl
+    cout << "calories: " << candy.calories << endl;
 }
