@@ -19,21 +19,21 @@ void to_upper(string &);
 
 int main()
 {
-	cout << "Enter a string (q to quit): ";
-	string text;
-	while (getline(cin, text) && text != "q")
-	{
-		to_upper(text);
-		cout << text << endl;
-		cout << "Next string (q to quit): ";
-	}
-	cout << "Bye.\n";
-	
-	return 0;
+    cout << "Enter a string (q to quit): ";
+    string text;
+    while (getline(cin, text) && text != "q")
+    {
+        to_upper(text);
+        cout << text << endl;
+        cout << "Next string (q to quit): ";
+    }
+    cout << "Bye.\n";
+    return 0;
 }
 
 void to_upper(string & s)
 {
-	for (int i = 0; s[i]; ++i)
-		s[i] = toupper(s[i]);
+    for (int i = 0; s[i]; ++i){
+        s[i] = toupper(s[i]);
+    }
 }
