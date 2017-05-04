@@ -21,42 +21,46 @@ char * maxn<char *>(char * ar[], int);
 
 int main()
 {
-	using namespace std;
+    using namespace std;
 
-	int iNums[6] = {4, 6, 2, 8, 1, 7};
-	cout << maxn(iNums, 6) << endl;
+    int iNums[6] = {4, 6, 2, 8, 1, 7};
+    cout << maxn(iNums, 6) << endl;
 
-	double dNums[4] = {3.5, 6.3, 9.8, 1.3};
-	cout << maxn(dNums, 4) << endl;
+    double dNums[4] = {3.5, 6.3, 9.8, 1.3};
+    cout << maxn(dNums, 4) << endl;
 
-	char * pStr[] = {
-		"bla bla", 
-		"bla", 
-		"bla bla bla", // 11 characters
-		"What's up??", // 11 characters
-		"I see"
-	}; 
-	cout << maxn(pStr, 5) << endl;
+    char * pStr[] = {
+        "bla bla", 
+        "bla", 
+        "bla bla bla", // 11 characters
+        "What's up??", // 11 characters
+        "I see"
+    }; 
+    cout << maxn(pStr, 5) << endl;
 
-	return 0;
+    return 0;
 }
 
 template <typename T>
 T maxn(T ar[], int size)
 {
-	T max = ar[0];
-	for (int i = 1; i < size; ++i)
-		if (max < ar[i])
-			max = ar[i];
-	return max;
+    T max = ar[0];
+    for (int i = 1; i < size; ++i){
+        if (max < ar[i]){
+            max = ar[i];
+        }
+    }
+    return max;
 }
 
 template <> 
 char * maxn<char *>(char * ar[], int size)
 {
-	char * longest = ar[0];
-	for (int i = 1; i < size; ++i)
-		if (strlen(longest) < strlen(ar[i]))
-			longest = ar[i];
-	return longest;
+   char * longest = ar[0];
+    for (int i = 1; i < size; ++i){
+        if (strlen(longest) < strlen(ar[i])){
+            longest = ar[i];
+	}
+    }
+    return longest;
 }
