@@ -9,7 +9,7 @@ struct chaff
 };
 
 // function calls set_dross() and set_slag() functions
-// and sets elements of *ptChAr
+// and sets elements of *pChaffAr
 void set_ptChAr(chaff * pChaffAr);
 
 // function solicits dross from user
@@ -20,5 +20,5 @@ void set_dross(chaff & ch, int i);
 // and sets the member of ch to the value entered
 void set_slag(chaff & ch, int i);
 
-// function displays contents of *ptChAr
+// function displays contents of *pChaffAr
 void show_ptChAr(chaff * pChaffAr);
