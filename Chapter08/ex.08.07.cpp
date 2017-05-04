@@ -6,10 +6,10 @@ now should report the total number of things and the sum of all the debts.
 
 #include <iostream>
 
-template <typename T>            // template A
+template <typename T>        // template A
 T SumArray(T arr[], int n);
 
-template <typename T>            // template B
+template <typename T>        // template B
 T SumArray(T * arr[], int n);
 
 struct debts
@@ -30,16 +30,16 @@ int main()
     };
     double * pd[3]; 
 
-// set pointers to the amount members of the structures in mr_E
+    // set pointers to the amount members of the structures in mr_E
     for (int i = 0; i < 3; i++)
         pd[i] = &mr_E[i].amount;
     
     cout << "The total number of things: ";
-// things is an array of int
-    cout << SumArray(things, 6) << endl;  // uses template A
+    // things is an array of int
+    cout << SumArray(things, 6) << endl; // uses template A
     cout << "The sum of all the debts: ";
-// pd is an array of pointers to double
-    cout << SumArray(pd, 3) << endl;      // uses template B (more specialized)
+    // pd is an array of pointers to double
+    cout << SumArray(pd, 3) << endl;     // uses template B (more specialized)
     // cin.get();
     return 0;
 }
@@ -47,17 +47,19 @@ int main()
 template <typename T>
 T SumArray(T arr[], int n)
 {
-	T sum = 0;    
-	for (int i = 0; i < n; i++)
+    T sum = 0;    
+    for (int i = 0; i < n; i++){
         sum += arr[i];
-	return sum;
+    }
+    return sum;
 }
 
 template <typename T>
 T SumArray(T * arr[], int n)
 {
     T sum = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++){
         sum += *arr[i];
+    }
     return sum;
 }
