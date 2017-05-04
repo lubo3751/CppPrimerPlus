@@ -4,8 +4,8 @@ const int N = 2;
 
 struct chaff
 {
-	char dross[20];
-	int slag;
+    char dross[20];
+    int slag;
 };
 
 // function calls set_dross() and set_slag() functions
