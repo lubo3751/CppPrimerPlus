@@ -9,33 +9,34 @@ choice, and then displays the contents of each structure.
 
 struct CandyBar
 {
-	char brand[20];
-	float weight;
-	int calories;
+    char brand[20];
+    double weight;
+    int calories;
 };
 
 int main()
 {
-	using namespace std;
+    using std::cout;
+    using std::endl;
 
-	CandyBar candies[3] =
-	{
-		{"KitKat", 4.5, 280},
-		{"Mars", 5.5, 250},
-		{"Bounty", 6.5, 300}
-	};
+    CandyBar candies[3] =
+    {
+        {"KitKat", 4.5, 280},
+        {"Mars", 5.5, 250},
+        {"Bounty", 6.5, 300}
+    };
 
-	cout << candies[0].brand << ", " 
-		 << candies[0].weight << ", " 
-		 << candies[0].calories << endl;
+    cout << candies[0].brand << ", ";
+    cout << candies[0].weight << ", ";
+    cout << candies[0].calories << endl;
 
-	cout << candies[1].brand << ", " 
-		 << candies[1].weight << ", " 
-		 << candies[1].calories << endl;
+    cout << candies[1].brand << ", ";
+    cout << candies[1].weight << ", ";
+    cout << candies[1].calories << endl;
 
-	cout << candies[2].brand << ", " 
-		 << candies[2].weight << ", " 
-		 << candies[2].calories << endl;
-	
-	return 0; 
+    cout << candies[2].brand << ", ";
+    cout << candies[2].weight << ", ";
+    cout << candies[2].calories << endl;
+
+    return 0; 
 }
