@@ -12,30 +12,27 @@ sales for the year.
 #include <iostream>
 #include <string>
 
-const int Months = 12;
+const int MONTHS = 12;
 
 int main()
 {
-	using namespace std;
-		
-	string months[Months] = 
-		{"January", "February", "March", "April", "May", 
-		 "June", "July", "August", "September", "October", 
-		 "November", "December"};
-	int sales[Months];
-	for (int i = 0; i < Months; ++i)
-	{
-		cout << "Enter the sales for " << months[i] << ": ";
-		cin >> sales[i];
-	}
-
-	int sum = 0;
-	for (int i = 0; i < Months; ++i)
-	{
-		sum += sales[i];
-	}
-
-	cout << "The total sales for the year is " << sum << endl;
+    std::string months[MONTHS] = 
+        {"January", "February", "March", "April", "May", "June", 
+         "July", "August", "September", "October", "November", "December"};
+    int sales[MONTHS];
+    // prompt user to enter monthly sales
+    for (int i = 0; i < MONTHS; ++i)
+    {
+        std::cout << "Enter the sales for " << months[i] << ": ";
+        std::cin >> sales[i];
+    }
+    int sum = 0;
+    // calculate the sum
+    for (int i = 0; i < MONTHS; ++i) {
+        sum += sales[i];
+    }
+    // show the sum
+    std::cout << "The total sales for the year is " << sum << std::endl;
 
     return 0;
 }
