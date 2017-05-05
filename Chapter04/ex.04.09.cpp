@@ -8,43 +8,44 @@ dynamically.
 #include<cstring>
 
 struct CandyBar
-	{
-		char brand[20];
-		float weight;
-		int calories;
-	};
+{
+    char brand[20];
+    double weight;
+    int calories;
+};
 
 int main(void)
 {
-	using namespace std;
+    using std::cout;
+    using std::endl;
 
-	CandyBar * candies = new CandyBar [3];
-	
-	strcpy(candies[0].brand, "KitKat");
-	candies[0].weight = 4.5;
-	candies->calories = 280;
+    CandyBar * pt_CandyBar = new CandyBar [3];
 
-	strcpy(candies[1].brand, "Mars");
-	candies[1].weight = 5.5;
-	candies[1].calories = 250;
+    strcpy(pt_CandyBar[0].brand, "KitKat");
+    pt_CandyBar[0].weight = 4.5;
+    pt_CandyBar[0].calories = 280;
 
-	strcpy(candies[2].brand, "Bounty");
-	candies[2].weight = 6.5;
-	candies[2].calories = 300;
-	
-	cout << candies[0].brand << ", " 
-		 <<  candies[0].weight << ", " 
-		 << candies[0].calories << endl;
+    strcpy(pt_CandyBar[1].brand, "Mars");
+    pt_CandyBar[1].weight = 5.5;
+    pt_CandyBar[1].calories = 250;
 
-	cout << candies[1].brand << ", " 
-		 <<  candies[1].weight << ", " 
-		 << candies[1].calories << endl;
+    strcpy(pt_CandyBar[2].brand, "Bounty");
+    pt_CandyBar[2].weight = 6.5;
+    pt_CandyBar[2].calories = 300;
 
-	cout << candies[2].brand << ", " 
-		 <<  candies[2].weight << ", " 
-		 << candies[2].calories << endl;
+    cout << pt_CandyBar[0].brand << ", ";
+    cout << pt_CandyBar[0].weight << ", ";
+    cout << pt_CandyBar[0].calories << endl;
 
-	delete [] candies;
+    cout << pt_CandyBar[1].brand << ", ";
+    cout << pt_CandyBar[1].weight << ", ";
+    cout << pt_CandyBar[1].calories << endl;
 
-	return 0;
+    cout << pt_CandyBar[2].brand << ", ";
+    cout << pt_CandyBar[2].weight << ", ";
+    cout << pt_CandyBar[2].calories << endl;
+
+    delete [] pt_CandyBar;
+
+    return 0;
 }
