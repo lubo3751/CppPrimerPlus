@@ -11,24 +11,25 @@ that the sum of all the integers from 2 through 9 is 44.
 
 int main()
 {
-    using namespace std;
-	
-	cout << "Enter two integers" << endl;
-	cout << "the first: ";
-	int first;
-	cin >> first;
-	cout << "the second: ";
-	int second;
-	cin >> second;
+    using std::cout;
+    using std::cin;
+    using std::endl;
+    
+    cout << "Enter two integers" << endl;
+    cout << "the first: ";
+    int first;
+    cin >> first;
+    cout << "the second: ";
+    int second;
+    cin >> second;
 
-	int sum = 0;
-	for (int i = first; i <= second; i++)
-	{
-		sum += i;
-	}
-	
-	cout << "The sum of all the integers from " << first
-		 << " to " << second << " is " << sum << endl;
+    int sum = 0;
+    for (int i = first; i <= second; i++) {
+        sum += i;
+    }
+
+    cout << "The sum of all the integers from " << first;
+    cout << " to " << second << " is " << sum << endl;
 
     return 0; 
 }
