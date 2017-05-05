@@ -11,23 +11,21 @@ family.)
 int main()
 {
     using namespace std;
-
-	char ch;
-	cin.get(ch);
-	while (ch != '@')
-	{
-		if (isdigit(ch)) {
-			cin.get(ch);
-			continue;
-		}
-		else if (isupper(ch))
-			ch = tolower(ch);
-		else
-			ch = toupper(ch);
-		cout << ch;
-		cin.get(ch);
-	}
+    char ch;
+    cin.get(ch);
+    while (ch != '@')
+    {
+        if (isdigit(ch)) {
+            cin.get(ch);
+            continue;
+        } else if (isupper(ch)) {
+            ch = tolower(ch);
+        } else {
+            ch = toupper(ch);
+        }
+        cout << ch;
+        cin.get(ch);
+    }
     cout << endl;
-    
-	return 0; 
+    return 0; 
 }
