@@ -6,23 +6,25 @@ Write a C++ program that asks for a distance in furlongs and converts it to yard
 #include <iostream>
 
 // function prototype
-int furToYar(int);
+int furlongs_to_yards(int);
 
 int main()
 {
-    using namespace std;
-    
-	int fur;
+    using std::cout;
+    using std::cin;
+    using std::endl;
+
+    int furlongs;
     cout << "Enter the distance in furlongs: ";
-    cin >> fur;
-    
-	int yar = furToYar(fur);
-    cout << fur << " furlongs = " << yar << " yards." << endl;
+    cin >> furlongs;
+
+    int yards = furlongs_to_yards(furlongs);
+    cout << furlongs << " furlongs = " << yards << " yards." << endl;
 
     return 0;
 }
 
-int furToYar(int fu)
+int furlongs_to_yards(int f)
 {
-     return fu * 220;
+     return f * 220;
 }
