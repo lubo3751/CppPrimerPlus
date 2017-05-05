@@ -21,25 +21,27 @@ and this conversion factor:
 #include <iostream>
 
 // function prototype
-double toAstUn(double);
+double to_astro_units(double);
 
 int main()
 {
-	using namespace std;
-	
-	cout << "Enter the number of light years: ";
-	double liYe;
-	cin >> liYe;
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	double astUn;
-	astUn = toAstUn(liYe);
-	cout << liYe << " light years = "
-		 << astUn << " astronomical units." << endl;
+    cout << "Enter the number of light years: ";
+    double light_years;
+    cin >> light_years;
 
-	return 0;
+    double astro_units;
+    astro_units = to_astro_units(light_years);
+    cout << light_years << " light years = ";
+    cout << astro_units << " astronomical units." << endl;
+
+    return 0;
 }
 
-double toAstUn(double ly)
+double to_astro_units(double ly)
 {
-	return ly * 63240;
+    return ly * 63240;
 }
