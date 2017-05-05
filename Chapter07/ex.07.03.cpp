@@ -2,11 +2,11 @@
 Here is a structure declaration:
 struct box
 {
-	char maker[40];
-	float height;
-	float width;
-	float length;
-	float volume;
+    char maker[40];
+    float height;
+    float width;
+    float length;
+    float volume;
 };
 a. Write a function that passes a box structure by value and that displays the
 value of each member.
@@ -19,11 +19,11 @@ c. Write a simple program that uses these two functions.
 
 struct box
 {
-	char maker[40];
-	float height;
-	float width;
-	float length;
-	float volume;
+    char maker[40];
+    float height;
+    float width;
+    float length;
+    float volume;
 };
 
 // function prototypes
@@ -36,62 +36,65 @@ int main()
     using namespace std;
     box container;
 
-	userInput(&container);
-	addVolume(&container);
-	display(container);
-	
-	return 0;
+    userInput(&container);
+    addVolume(&container);
+    display(container);
+
+    return 0;
 }
 
 void userInput(box *ptr)
 {
-	using namespace std;
-	cout << "Enter the maker: ";
-	cin.getline(ptr->maker, 40);
-	cout << "Enter the height: ";
-	cin >> ptr->height;
-	while (!cin || ptr->height <= 0)    // bad input
-	{
-		cin.clear();
-		while (cin.get() != '\n')
-			continue;
-		cout << "Bad input, enter the height again: ";
-		cin >> ptr->height;
+    using namespace std;
+    cout << "Enter the maker: ";
+    cin.getline(ptr->maker, 40);
+    cout << "Enter the height: ";
+    cin >> ptr->height;
+    while (!cin || ptr->height <= 0)    // bad input
+    {
+        cin.clear();
+        while (cin.get() != '\n') {
+            continue;
 	}
-	cout << "Enter the width: ";
-	cin >> ptr->width;
-	while (!cin || ptr->width <= 0)    // bad input
-	{
-		cin.clear();
-		while (cin.get() != '\n')
-			continue;
-		cout << "Bad input, enter the width again: ";
-		cin >> ptr->width;
+        cout << "Bad input, enter the height again: ";
+        cin >> ptr->height;
+    }
+    cout << "Enter the width: ";
+    cin >> ptr->width;
+    while (!cin || ptr->width <= 0)    // bad input
+    {
+        cin.clear();
+        while (cin.get() != '\n') {
+            continue;
 	}
-	cout << "Enter the length: ";
-	cin >> ptr->length;
-	while (!cin || ptr->length <= 0)    // bad input
-	{
-		cin.clear();
-		while (cin.get() != '\n')
-			continue;
-		cout << "Bad input, enter the length again: ";
-		cin >> ptr->length;
+        cout << "Bad input, enter the width again: ";
+        cin >> ptr->width;
+    }
+    cout << "Enter the length: ";
+    cin >> ptr->length;
+    while (!cin || ptr->length <= 0)    // bad input
+    {
+        cin.clear();
+        while (cin.get() != '\n') {
+            continue;
 	}
+        cout << "Bad input, enter the length again: ";
+        cin >> ptr->length;
+    }
 }
 
 void addVolume(box *ptr)
 {
-	ptr->volume = ptr->height * ptr->width * ptr->length;
+    ptr->volume = ptr->height * ptr->width * ptr->length;
 }
 
 void display(box b)
 {
-	using namespace std;
-	cout << "The box details:"
-		 << "\nMaker: " << b.maker
-		 << "\nHeight: " << b.height
-		 << "\nWidth: " << b.width
-		 << "\nLength: " << b.length
-		 << "\nVolume: " << b.volume << endl;
+    using namespace std;
+    cout << "The box details:";
+    cout << endl << "Maker: " << b.maker;
+    cout << endl << "Height: " << b.height;
+    cout << endl << "Width: " << b.width;
+    cout << endl << "Length: " << b.length;
+    cout << endl << "Volume: " << b.volume << endl;
 }
