@@ -14,23 +14,24 @@ Here’s the information in a single string: Fleming, Flip
 
 int main()
 {
-    using namespace std;
-    
-	cout << "Enter your first name: ";
-	char first_name[20];
-	cin >> first_name;
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	cout << "Enter your last name: ";
-	char last_name[20];
-	cin >> last_name;
+    cout << "Enter your first name: ";
+    char first_name[20];
+    cin >> first_name;
 
-	char whole_name[40];
-	strcpy(whole_name, last_name);
-	strcat(whole_name, ", ");
-	strcat(whole_name, first_name);
+    cout << "Enter your last name: ";
+    char last_name[20];
+    cin >> last_name;
 
-	cout << "Here's the information in a single string: " 
-		 << whole_name << endl;
+    char whole_name[40];
+    strcpy(whole_name, last_name);
+    strcat(whole_name, ", ");
+    strcat(whole_name, first_name);
+
+    cout << "Here's the information in a single string: " << whole_name << endl;
 
     return 0; 
 }
