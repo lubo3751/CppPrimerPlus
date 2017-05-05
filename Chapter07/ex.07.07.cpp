@@ -8,7 +8,7 @@ argument to identify the end of the data.
 
 #include <iostream>
 
-const int Max = 5;
+const int MAX = 5;
 
 // function prototypes
 double * fill_array(double *begin, const double *end);
@@ -18,9 +18,9 @@ void revalue(double r, double *begin, const double *end);
 int main()
 {
     using namespace std;
-    double properties[Max];
+    double properties[MAX];
 
-    double *end = fill_array(properties, properties+Max);
+    double *end = fill_array(properties, properties+MAX);
     show_array(properties, end);
     if (end > properties)
     {
@@ -29,14 +29,15 @@ int main()
         while (!(cin >> factor))    // bad input
         {
             cin.clear();
-            while (cin.get() != '\n')
+            while (cin.get() != '\n') {
                 continue;
-           cout << "Bad input; Please enter a number: ";
+	    }
+            cout << "Bad input; Please enter a number: ";
         }
         revalue(factor, properties, end);
         show_array(properties, end);
     }
-    cout << "Done.\n";
+    cout << "Done." << endl;
     return 0;
 }
 
@@ -44,21 +45,21 @@ double * fill_array(double *begin, const double *end)
 {
     using namespace std;
     double temp;
-	double *pt;
+    double *pt;
     for (pt = begin; pt != end; pt++)
     {
         cout << "Enter value #" << (pt - begin + 1) << ": ";
         cin >> temp;
-        if (!cin)    // bad input
-        {
+        if (!cin) {  // bad input
             cin.clear();
-            while (cin.get() != '\n')
+            while (cin.get() != '\n') {
                 continue;
-           cout << "Bad input; input process terminated.\n";
+	    }
+           cout << "Bad input; input process terminated." << endl;
            break;
-        }
-        else if (temp < 0)     // signal to terminate
+        } else if (temp < 0) {    // signal to terminate
             break;
+	}
         *pt = temp;
     }
     return pt;
