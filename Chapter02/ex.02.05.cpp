@@ -15,25 +15,27 @@ Fahrenheit = 1.8 × degrees Celsius + 32.0
 #include <iostream>
 
 // function prototype
-double toFahr(double);
+double cels_to_fahren(double);
 
 int main()
 {
-	using namespace std;
-	
-	cout << "Please enter a Celsius value: ";
-	double cels;
-	cin >> cels;
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	double fahr;
-	fahr = toFahr(cels);
-	cout << cels << " degrees Celsius is "
-		 << fahr << " degrees Fahrenheit." << endl;
+    cout << "Please enter a Celsius value: ";
+    double celsius;
+    cin >> celsius;
 
-	return 0;
+    double fahrenheit;
+    fahrenheit = cels_to_fahren(celsius);
+    cout << celsius << " degrees Celsius is ";
+    cout << fahrenheit << " degrees Fahrenheit." << endl;
+
+    return 0;
 }
 
-double toFahr(double ce)
+double cels_to_fahren(double c)
 {
-	return 1.8 * ce + 32.0;
+    return 1.8 * c + 32.0;
 }
