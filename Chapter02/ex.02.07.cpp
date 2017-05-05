@@ -10,27 +10,26 @@ Time: 9:28
 */
 
 #include <iostream>
-using namespace std;
 
 // function prototype
-void dispTime(int, int);
+void show_time(int, int);
 
 int main()
-{	
-	cout << "Enter the number of hours: ";
-	int hours;
-	cin >> hours;	
-	
-	cout << "Enter the number of minutes: ";
-	int mins;
-	cin >> mins;
+{
+    std::cout << "Enter the number of hours: ";
+    int hours;
+    std::cin >> hours;	
 
-	dispTime(hours, mins);
+    std::cout << "Enter the number of minutes: ";
+    int minutes;
+    std::cin >> minutes;
 
-	return 0;
+    show_time(hours, minutes);
+
+    return 0;
 }
 
-void dispTime(int h, int m)
+void show_time(int h, int m)
 {
-	cout << "Time: " << h << ':' << m << endl;
+    std::cout << "Time: " << h << ':' << m << std::endl;
 }
