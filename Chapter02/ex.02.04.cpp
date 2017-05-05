@@ -9,23 +9,21 @@ Your age in months is 384.
 #include <iostream>
 
 // function prototype
-int ageInMonths(int);
+int age_in_months(int);
 
 int main()
 {
-	using namespace std;
-	
-	cout << "Enter your age: ";
-	int age;
-	cin >> age;
+    std::cout << "Enter your age: ";
+    int age;
+    std::cin >> age;
 
-	age = ageInMonths(age);
-	cout << "Your age in months is " << age << endl;
+    age = age_in_months(age);
+    std::cout << "Your age in months is " << age << std::endl;
 
-	return 0;
+    return 0;
 }
 
-int ageInMonths(int a)
+int age_in_months(int a)
 {
-	return a * 12;
+    return a * 12;
 }
