@@ -27,36 +27,36 @@ Here is your collection:
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 struct car
 {
-	string make;
-	int year;
+    std::string make;
+    int year;
 };
 
 int main()
 {
-	cout << "How many cars do you wish to catalog? ";
-	int n_cars;
-	(cin >> n_cars).get();
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	car * cars = new car [n_cars];
+    cout << "How many cars do you wish to catalog? ";
+    int num_of_cars;
+    (cin >> num_of_cars).get();
 
-	for (int i = 0; i < n_cars; ++i)
-	{
-		cout << "Car #" << i + 1 << ":\n"
-			 << "Please enter the make: ";
-		getline(cin, cars[i].make);
-		cout << "Please enter the year made: ";
-		(cin >> cars[i].year).get();
-	}
+    car * pt_cars = new car [num_of_cars];
 
-	cout << "Here is your collection:" << endl;
-	for (int i = 0; i < n_cars; ++i)
-	{
-		cout << cars[i].year << " " << cars[i].make << endl;
-	}
+    for (int i = 0; i < num_of_cars; ++i)
+    {
+        cout << "Car #" << i + 1 << ":" << endl << "Please enter the make: ";
+        getline(cin, pt_cars[i].make);
+        cout << "Please enter the year made: ";
+        (cin >> pt_cars[i].year).get();
+    }
+
+    cout << "Here is your collection:" << endl;
+    for (int i = 0; i < num_of_cars; ++i) {
+        cout << pt_cars[i].year << " " << pt_cars[i].make << endl;
+    }
 
     return 0;
 }
