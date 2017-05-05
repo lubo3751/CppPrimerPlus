@@ -6,6 +6,7 @@ program should prompt the user to enter a valid response until the
 user complies.Then the program should use a switch to select a simple 
 action based on the user’s selection.A program run could look 
 something like this:
+
 Please enter one of the following choices:
 c) carnivore p) pianist
 t) tree g) game
@@ -31,63 +32,63 @@ int main()
     char choice;
     cin >> choice;
     while (choice != 'Q' && choice != 'q')
-	{
-		switch(choice)
-		{
-			case 'c':
-			case 'C': carnivore();
-				break;
-			case 'p':
-			case 'P': pianist();
-				break;
-			case 't':
-			case 'T': tree();
-				break;
-			case 'g':
-			case 'G': game();
-				break;
-		}
-		showmenu();
-		cin >> choice;
-	}
-    cout << "Bye!\n";
+    {
+        switch(choice)
+        {
+            case 'c':
+            case 'C': carnivore();
+                break;
+            case 'p':
+            case 'P': pianist();
+                break;
+            case 't':
+            case 'T': tree();
+                break;
+            case 'g':
+            case 'G': game();
+                break;
+        }
+        showmenu();
+        cin >> choice;
+    }
+    cout << "Bye!" << endl;
     return 0;
 }
 
 void showmenu()
 {
-    cout << "Please enter one of the following choices:\n"
-			"c) carnivore		 p) pianist\n"
-			"t) tree			 g) game\n"
-			"q) quit\n";
+    cout << "Please enter one of the following choices:" << endl;
+    cout << "c) carnivore		 p) pianist" << endl;
+    cout << "t) tree			 g) game" << endl;
+    cout << "q) quit" << endl;
 }
 
 void carnivore()
 {
-    cout << "A carnivore meaning 'meat eater' is an organism that \n"
-			"derives its energy and nutrient requirements from a diet \n"
-			"consisting mainly or exclusively of animal tissue, whether \n"
-			"through predation or scavenging.\n";
+    cout << "A carnivore meaning 'meat eater' is an organism that " << endl;
+    cout << "derives its energy and nutrient requirements from a diet " << endl;
+    cout << "consisting mainly or exclusively of animal tissue, whether " << endl;
+    cout << "through predation or scavenging." << endl;
 }
 
 void pianist()
 {
-    cout << "In this adaptation of the autobiography \"The Pianist: The \n"
-			"Extraordinary True Story of One Man's Survival in Warsaw, \n"
-			"1939-1945,\" Wladyslaw Szpilman (Adrien Brody), a Polish Jewish \n"
-			"radio station pianist, sees Warsaw change gradually as World \n"
-			"War II begins.\n";
+    cout << "In this adaptation of the autobiography \"The Pianist: The " << endl;
+    cout << "Extraordinary True Story of One Man's Survival in Warsaw, " << endl;
+    cout << "1939-1945,\" Wladyslaw Szpilman (Adrien Brody), a Polish Jewish " << endl;
+    cout << "radio station pianist, sees Warsaw change gradually as World " << endl;
+    cout << "War II begins." << endl;
 }
 
 void tree()
 {
-    cout << "In botany, a tree is a perennial plant with an elongated stem, \n"
-			"or trunk, supporting branches and leaves in most species.\n";
+    cout << "In botany, a tree is a perennial plant with an elongated stem, " << endl;
+    cout << "or trunk, supporting branches and leaves in most species." << endl;
 }
 
 void game()
 {
-    cout << "Game Digital plc is a British video games retail company. \n"
-			"The company's origins lie in the founding of the Rhino Group \n"
-			"by Terry Norris and Bev Ripley in 1991.\n";
+    cout << "Game Digital plc is a British video games retail company. " << endl;
+    cout << "The company's origins lie in the founding of the Rhino Group " << endl;
+    cout << "by Terry Norris and Bev Ripley in 1991." << endl;
 }
