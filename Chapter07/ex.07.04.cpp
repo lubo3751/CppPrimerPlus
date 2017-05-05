@@ -22,21 +22,21 @@ int main()
 {
     using namespace std;
     double total, choices, megaTotal;
-    cout << "Enter the total number of choices on the game card and\n"
-            "the number of picks allowed:\n";
+    cout << "Enter the total number of choices on the game card and" << endl;
+    cout << "the number of picks allowed:" << endl;
     while ((cin >> total >> choices) && choices <= total)
     {
         cout << "Enter the total number of choices for mega number:\n";
-		if (!(cin >> megaTotal) || !(megaTotal > 1))
-			break;
-		cout << "You have one chance in ";
-        cout << probability(total, choices)    // compute the odds
-			* probability(megaTotal, MegaNumber);
-        cout << " of winning.\n";
-        cout << "Enter another total number of choices on the game card and\n"
-            "the number of picks allowed (q to quit):\n";
+        if (!(cin >> megaTotal) || !(megaTotal > 1)) {
+            break;
+	}
+        cout << "You have one chance in ";
+        cout << probability(total, choices) * probability(megaTotal, MegaNumber);
+        cout << " of winning." << endl;
+        cout << "Enter another total number of choices on the game card and" << endl;
+        cout << "the number of picks allowed (q to quit):" << endl;
     }
-    cout << "bye\n";
+    cout << "bye" << endl;
     return 0;
 }
 
@@ -48,7 +48,8 @@ long double probability(unsigned numbers, unsigned picks)
     long double n;
     unsigned p;
 
-    for (n = numbers, p = picks; p > 0; n--, p--)
-        result = result * n / p ; 
+    for (n = numbers, p = picks; p > 0; n--, p--) {
+        result = result * n / p ;
+    }
     return result;
 }
