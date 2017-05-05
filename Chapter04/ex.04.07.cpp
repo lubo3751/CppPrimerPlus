@@ -14,30 +14,32 @@ Use cin (or its methods) and cout.
 
 struct Pizza
 {
-	char company[20];
-	float diameter;
-	float weight;
+    char company[20];
+    double diameter;
+    double weight;
 };
 
 int main()
 {
-	using namespace std;
-	
-	Pizza analysis;
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	cout << "Enter the name of the pizza company: ";
-	cin.getline(analysis.company, 20);
-	cout << "Enter the diameter of the pizza (in centimeters): ";
-	cin >> analysis.diameter;
-	cout << "Enter the weight of the pizza (in grams): ";
-	cin >> analysis.weight;
+    Pizza analysis;
 
-	cout << "The name of the pizza company: " 
-		 << analysis.company << endl;
-	cout << "The diameter of the pizza: " 
-		 << analysis.diameter << " centimeters" << endl;
-	cout << "The weight of the pizza: " 
-		 << analysis.weight << " grams" << endl;
-	
-	return 0; 
+    cout << "Enter the name of the pizza company: ";
+    cin.getline(analysis.company, 20);
+    cout << "Enter the diameter of the pizza (in centimeters): ";
+    cin >> analysis.diameter;
+    cout << "Enter the weight of the pizza (in grams): ";
+    cin >> analysis.weight;
+
+    cout << "The name of the pizza company: ";
+    cout << analysis.company << endl;
+    cout << "The diameter of the pizza: ";
+    cout << analysis.diameter << " centimeters" << endl;
+    cout << "The weight of the pizza: ";
+    cout << analysis.weight << " grams" << endl;
+
+    return 0; 
 }
