@@ -8,7 +8,7 @@ three separate array-processing functions.
 
 #include <iostream>
 
-const int Max = 10;
+const int MAX = 10;
 
 // function prototypes
 int getScores(double []);
@@ -18,47 +18,49 @@ double average(const double [], int);
 int main()
 {
     using namespace std;
-    double golf[Max];
-	int size = getScores(golf);
-	
-	if (size)
-	{
-		display(golf, size);
-		cout << "The average score: " << average(golf, size) << endl;
-	}
-	else
-		cout << "No scores to display\n";
-	return 0;
+    double golf[MAX];
+    int size = getScores(golf);
+
+    if (size) {
+        display(golf, size);
+        cout << "The average score: " << average(golf, size) << endl;
+    } else {
+        cout << "No scores to display" << endl;
+    }
+    return 0;
 }
 
 int getScores(double arr[])
 {
-	using namespace std;
-	cout << "Please enter your golf scores.\n";
-	cout << "You may enter up to " << Max 
-		 << " rounds <q to terminate>\n";
-	cout << "round #1: ";
+    using namespace std;
+    cout << "Please enter your golf scores." << endl;
+    cout << "You may enter up to " << MAX;
+    cout << " rounds <q to terminate>" << endl;
+    cout << "round #1: ";
     int i = 0;
-	while (i < Max && cin >> arr[i]) {
-        if (++i < Max)
+    while (i < MAX && cin >> arr[i]) {
+        if (++i < MAX) {
             cout << "round #" << i+1 << ": ";
+	}
     }
-	return i;
+    return i;
 }
 
 void display(const double arr[], int s)
 {
-	using namespace std;
-	cout << "Your scores: ";
-	for (int i = 0; i < s; i++)
-		cout << arr[i] << " ";
-	cout << endl;
+    using namespace std;
+    cout << "Your scores: ";
+    for (int i = 0; i < s; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 }
 
 double average(const double arr[], int size)
 {
-	double total = 0.0;
-	for (int i = 0; i < size; i++)
-		total += arr[i];
-	return total / size;
+    double total = 0.0;
+    for (int i = 0; i < size; i++) {
+        total += arr[i];
+    }
+    return total / size;
 }
