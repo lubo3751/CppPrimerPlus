@@ -10,23 +10,25 @@ the times and the average. Use an array object to hold the data.
 
 int main(void)
 {
-	using namespace std;
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	array<double, 3> times;
+    std::array<double, 3> times;
 
-	cout << "Enter three times for the 40-yd dash" << endl;
-	cout << "The first time: ";
-	cin >> times[0];
-	cout << "The second time: ";
-	cin >> times[1];
-	cout << "The third time: ";
-	cin >> times[2];
+    cout << "Enter three times for the 40-yd dash" << endl;
+    cout << "The first time: ";
+    cin >> times[0];
+    cout << "The second time: ";
+    cin >> times[1];
+    cout << "The third time: ";
+    cin >> times[2];
 
-	double average = (times[0] + times[1] + times[2]) / 3; 
+    double average = (times[0] + times[1] + times[2]) / 3; 
 
-	cout << "The times are " << times[0] << ", " 
-		 << times[1] << ", " << times[2] << endl;
-	cout << "Their average is " << average << endl;
+    cout << "The times are " << times[0] << ", ";
+    cout << times[1] << ", " << times[2] << endl;
+    cout << "Their average is " << average << endl;
 
-	return 0;
+    return 0;
 }
