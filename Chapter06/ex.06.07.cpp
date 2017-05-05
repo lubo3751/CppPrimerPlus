@@ -20,45 +20,46 @@ quietly across 15 meters of lawn. q
 
 int main()
 {
-	using namespace std;
-// ask the user for text input
-	cout << "Enter words (q to quit):\n";
-	int vowels = 0;      // counter
-	int consonants = 0;  // counter
-	int others = 0;      // counter
-	string word;         // word holder
+    using std::cout;
+    using std::cin;
+    using std::endl;
+    // ask the user for text input
+    cout << "Enter words (q to quit):" << endl;
+    int vowels = 0;      // counter
+    int consonants = 0;  // counter
+    int others = 0;      // counter
+    std::string word;         // word holder
 
-	cin >> word;
-	while (word != "q" && word != "Q")
-	{
-		if (isalpha(word[0]))
-		{
-			switch(word[0])
-			{
-				case 'A':
-				case 'a': 
-				case 'E':
-				case 'e': 
-				case 'I':
-				case 'i': 
-				case 'O':
-				case 'o': 
-				case 'U':
-				case 'u': 
-				case 'Y':
-				case 'y': ++vowels;      // count vowels
-					break;
-				default : ++consonants;  // count consonants
-			}
-		}
-		else
-			++others;                    // count others
-		cin >> word;
+    cin >> word;
+    while (word != "q" && word != "Q")
+    {
+        if (isalpha(word[0])) {
+            switch(word[0])
+            {
+                case 'A':
+                case 'a': 
+                case 'E':
+                case 'e': 
+                case 'I':
+                case 'i': 
+                case 'O':
+                case 'o': 
+                case 'U':
+                case 'u': 
+                case 'Y':
+                case 'y': ++vowels;      // count vowels
+                    break;
+                default : ++consonants;  // count consonants
+            }
+        } else {
+            ++others;                    // count others
 	}
-// display results
-	cout << vowels << " words beginning with vowels\n"
-		 << consonants << " words beginning with consonants\n"
-		 << others << " others\n";
-		 
+        cin >> word;
+    }
+    // display results
+    cout << vowels << " words beginning with vowels" << endl;
+    cout << consonants << " words beginning with consonants" << endl;
+    cout << others << " others" << endl;
+	 
     return 0;
 }
