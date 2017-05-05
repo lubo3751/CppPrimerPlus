@@ -9,43 +9,44 @@ combined years.
 #include <string>
 #include <array>
 
-const int Months = 12;
-const int Years = 3;
+const int MONTHS = 12;
+const int YEARS = 3;
 
 int main()
 {
-	using namespace std;
+    using std::array;
+    using std::string;
+    using std::cout;
+    using std::cin;
+    using std::endl;
+	
+    array<string, MONTHS> ar_months = 
+        {"January", "February", "March", "April", "May", "June", 
+         "July", "August", "September", "October", "November", "December"};
+    array<array<int,MONTHS>, YEARS> ar_sales;
 
-	array<string, Months> months = 
-		{"January", "February", "March", "April", "May", 
-		 "June", "July", "August", "September", "October", 
-		 "November", "December"};
-	array<array<int,Months>, Years> sales;
+    for (int year = 0; year < YEARS; ++year)
+    {
+        for (int month = 0; month < MONTHS; ++month)
+        {
+            cout << "Enter sales for " << ar_months[month];
+            cout << " year " << year + 1 << ": ";
+            cin >> ar_sales[year][month];
+        }
+    }
 
-	for (int year = 0; year < Years; ++year)
-	{
-		for (int month = 0; month < Months; ++month)
-		{
-			cout << "Enter sales for " << months[month] 
-			     << " year " << year + 1 << ": ";
-			cin >> sales[year][month];
-		}
-	}
+    int total, grand_total = 0;
+    for (int year = 0; year < YEARS; ++year)
+    {
+        total = 0;
+        for (int month = 0; month < MONTHS; ++month) {
+            total += ar_sales[year][month];
+        }
+        cout << "Total sales for year " << year + 1 << ": " << total << endl;
+        grand_total += total;
+    }
 
-	int total, grandTotal = 0;
-	for (int year = 0; year < Years; ++year)
-	{
-		total = 0;
-		for (int month = 0; month < Months; ++month)
-		{
-			total += sales[year][month];
-		}
-		cout << "Total sales for year " << year + 1 
-			 << ": " << total << endl;
-		grandTotal += total;
-	}
-
-	cout << "Total sales for all three years: " << grandTotal << endl;
+    cout << "Total sales for all three years: " << grand_total << endl;
 
     return 0;
 }
