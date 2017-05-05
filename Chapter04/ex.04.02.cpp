@@ -8,18 +8,20 @@ arrays.
 
 int main()
 {
-    using namespace std;
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	cout << "Enter your name:" << endl;
-    string name;
-	getline(cin, name);
-    
-	cout << "Enter your favorite dessert:" << endl;
-    string dessert;
-	getline(cin, dessert);
-   
-	cout << "I have some delicious " << dessert
-		 << " for you, " << name << "." << endl;
+    cout << "Enter your name:" << endl;
+    std::string name;
+    getline(cin, name);
+
+    cout << "Enter your favorite dessert:" << endl;
+    std::string dessert;
+    getline(cin, dessert);
+
+    cout << "I have some delicious " << dessert;
+    cout << " for you, " << name << "." << endl;
 
     return 0; 
 }
