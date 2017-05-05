@@ -12,26 +12,26 @@ Enter the number of seconds: 31600000
 
 #include <iostream>
 
-int const H_in_d = 24;  // hours in a day
-int const M_in_h = 60;  // minutes in an hour 
-int const S_in_m = 60;  // seconds in a minute
+const int H_IN_D = 24;  // hours in a day
+const int M_IN_H = 60;  // minutes in an hour 
+const int S_IN_M = 60;  // seconds in a minute
 
 int main()
-{  
-	using namespace std;
-			
-	cout << "Enter the number of seconds: ";
-	long long sAll;
-	cin >> sAll;
+{
+    using namespace std;
+		
+    cout << "Enter the number of seconds: ";
+    long long secs_total;
+    cin >> secs_total;
 
-	int s = sAll % S_in_m;                                        // seconds
-	int m = sAll % (S_in_m * M_in_h) / M_in_h;                    // minutes
-	int h = sAll % (S_in_m * M_in_h * H_in_d) / S_in_m / M_in_h;  // hours
-	int d = sAll / (S_in_m * M_in_h * H_in_d);                    // days
+    int secs = secs_total % S_IN_M;
+    int mins = secs_total % (S_IN_M * M_IN_H) / M_IN_H;
+    int hours = secs_total % (S_IN_M * M_IN_H * H_IN_D) / S_IN_M / M_IN_H;
+    int days = secs_total / (S_IN_M * M_IN_H * H_IN_D);
 
-	cout << sAll << " seconds = " << d << " days, "
-		 << h << " hours, " << m << " minutes, " 
-		 << s << " seconds" << endl; 
+    cout << secs_total << " seconds = " << days << " days, ";
+    cout << hours << " hours, " << mins << " minutes, ";
+    cout << secs << " seconds" << endl; 
 
     return 0; 
 }
