@@ -11,27 +11,28 @@ const int SIZE = 60;
 
 int main()
 {
-    using namespace std;
+    using std::cout;
+    using std::endl;
     char filename[SIZE];
-    ifstream inFile;        // object for handling file input
+    std::ifstream inFile;        // object for handling file input
 
-	// ask the user which file to read
+    // ask the user which file to read
     cout << "Enter name of data file: ";
-    cin.getline(filename, SIZE);
+    std::cin.getline(filename, SIZE);
     inFile.open(filename);  // associate inFile with a file
 
-	// check the file has opened
+    // check the file has opened
     if (!inFile.is_open())  // failed to open file
     {
         cout << "Could not open the file " << filename << endl;
-        cout << "Program terminating.\n";
+        cout << "Program terminating." << endl;
         exit(EXIT_FAILURE);
     }
-    
-    char ch;
-	int count = 0;          // number of characters read
 
-	// read and count character after character
+    char ch;
+    int count = 0;          // number of characters read
+
+    // read and count character after character
     inFile >> ch;           // get first character
     while (inFile.good())   // while input good and not at EOF
     {
@@ -39,22 +40,22 @@ int main()
         inFile >> ch;       // get next character
     }
 
-	// check ending condition 
-    if (inFile.eof())
-        cout << "End of file reached.\n";
-    else if (inFile.fail())
-        cout << "Input terminated by data mismatch.\n";
-    else
-        cout << "Input terminated for unknown reason.\n";
+    // check ending condition 
+    if (inFile.eof()) {
+        cout << "End of file reached." << endl;
+    } else if (inFile.fail()) {
+        cout << "Input terminated by data mismatch." << endl;
+    } else {
+        cout << "Input terminated for unknown reason." << endl;
+    }
 
-	// print results
-	if (count == 0)
-        cout << "No data processed.\n";
-    else
-    {
+    // print results
+    if (count == 0) {
+        cout << "No data processed." << endl;
+    } else {
         cout << "Characters read: " << count << endl;
     }
-    inFile.close();         // finished with the file
     
+    inFile.close();         // finished with the file
     return 0;
 }
