@@ -13,7 +13,6 @@ non-numeric input.
 */
 
 #include <iostream>
-using namespace std;
 
 const double Under15 = 10000.0 * 0.1;
 const double Under35 = Under15 + 20000.0 * 0.15;
@@ -26,34 +25,39 @@ double calcTax (double);
 
 int main()
 {
+    using std::cout;
+    using std::cin;
+    using std::endl;
     double income;
-	double tax;
+    double tax;
     while (1)
-	{
-		cout << "Please enter your income: ";
-		while (!(cin >> income)) {
-            cin.clear();     // reset input
-            while (cin.get() != '\n')
-                continue;    // get rid of bad input
-            cout << "Please enter your income: ";
+    {
+        income = -1;
+        cout << "Please enter your income: ";
+        cin >> income;
+        cin.ignore(1000, '\n'); // clear rubbish input from the stream
+        if (cin.gcount() > 1) { // if more than '\n' cleared
+            break;              // non-numeric input i.e. 120abc, ..., abc etc.
         }
-		if (income < 0)
-			break;
-		tax = calcTax(income);
-		cout << "Your tax is " << tax << endl;
-	}
-    cout << "Bye.\n";
-	return 0;
+        if (income < 0) {      // negative or non-numeric input
+            break;  
+        }
+        tax = calcTax(income);
+        cout << "Your tax is " << tax << endl;
+    }
+    cout << "Bye." << endl;
+    return 0;
 }
 
 double calcTax (double i)
 {
-	double tax = 0;
-	if (i > 35000)
-		tax += (i - 35000) * Over35 + Under35;
-	else if (i > 15000)
-		tax += (i - 15000) * Over15 + Under15;
-	else if (i > 5000)
-		tax += (i - 5000) * Over5;
-	return tax;
+    double tax = 0;
+    if (i > 35000) {
+        tax += (i - 35000) * Over35 + Under35;
+    } else if (i > 15000) {
+        tax += (i - 15000) * Over15 + Under15;
+    } else if (i > 5000) {
+        tax += (i - 5000) * Over5;
+    }
+    return tax;
 }
