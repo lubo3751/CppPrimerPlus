@@ -13,27 +13,26 @@ produce the remaining output.
 */
 
 #include <iostream>
-using namespace std;
 
 // function prototypes
-void func1();
-void func2();
+void function_1();
+void function_2();
 
 int main()
 {
-	func1();
-	func1();
-	func2();
-	func2();
-	return 0;
+    function_1();
+    function_1();
+    function_2();
+    function_2();
+    return 0;
 }
 
-void func1()
+void function_1()
 {
-	cout << "Three blind mice" << endl;
+    std::cout << "Three blind mice" << std::endl;
 }
 
-void func2()
+void function_2()
 {
-	cout << "See how they run" << endl;
+    std::cout << "See how they run" << std::endl;
 }
