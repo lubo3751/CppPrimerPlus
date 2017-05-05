@@ -18,7 +18,9 @@ const int S_IN_M = 60;  // seconds in a minute
 
 int main()
 {
-    using namespace std;
+    using std::cout;
+    using std::cin;
+    using std::endl;
 		
     cout << "Enter the number of seconds: ";
     long long secs_total;
