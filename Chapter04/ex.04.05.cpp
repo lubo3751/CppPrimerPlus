@@ -15,20 +15,21 @@ variable.
 
 struct CandyBar
 {
-	char brand[20];
-	float weight;
-	int calories;
+    char brand[20];
+    double weight;
+    int calories;
 };
 
 int main()
 {
-	using namespace std;
+    using std::cout;
+    using std::endl;
 
-	CandyBar snack = {"Mocha Munch", 2.3, 350};    
+    CandyBar snack = {"Mocha Munch", 2.3, 350};    
     cout << "CandyBar's" << endl;	
-	cout << "brand: " << snack.brand << endl;
-	cout << "weight: " << snack.weight << endl;
-	cout << "calorie: " << snack.calories << endl;
-	
-	return 0; 
+    cout << "brand: " << snack.brand << endl;
+    cout << "weight: " << snack.weight << endl;
+    cout << "calorie: " << snack.calories << endl;
+
+    return 0; 
 }
