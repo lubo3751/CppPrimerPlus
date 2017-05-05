@@ -19,24 +19,24 @@ Enter number of rows: 5
 
 int main()
 {
-	using namespace std;
-	
-	cout << "Enter number of rows: ";
-	int rows;
-	cin >> rows;
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	for (int i = 1; i <= rows; ++i)
-	{
-		for (int j = rows - i; j > 0; --j)
-		{
-			cout << '.';
-		}
-		for (int j = i; j > 0; --j)
-		{
-			cout << '*';
-		}
-		cout << endl;
-	}
+    cout << "Enter number of rows: ";
+    int rows;
+    cin >> rows;
+
+    for (int i = 1; i <= rows; ++i)
+    {
+        for (int j = rows - i; j > 0; --j) {
+            cout << '.';
+        }
+        for (int j = i; j > 0; --j) {
+            cout << '*';
+        }
+        cout << endl;
+    }
 
     return 0;
 }
