@@ -16,20 +16,22 @@ You can use the Internet to get more recent figures.
 #include <iostream>
 
 int main()
-{  
-	using namespace std;
+{
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	cout << "Enter the world's population: ";
-	long long worldPop;
-	cin >> worldPop;	
-	cout << "Enter the population of the US: ";
-	long long usPop;
-	cin >> usPop;
+    cout << "Enter the world's population: ";
+    long long world_population;
+    cin >> world_population;	
+    cout << "Enter the population of the US: ";
+    long long us_population;
+    cin >> us_population;
 
-	double percentage = double(usPop) / (double(worldPop) / 100.0);
+    double percentage = double(us_population) / (double(world_population) / 100.0);
 
-	cout << "The population of the US is " << percentage 
-		 << "% of the world population." << endl;
+    cout << "The population of the US is " << percentage;
+    cout << "% of the world population." << endl;
 
     return 0; 
 }
