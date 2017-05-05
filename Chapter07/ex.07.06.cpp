@@ -15,7 +15,7 @@ show the array.
 
 #include <iostream>
 
-const int Max = 7;
+const int MAX = 7;
 
 // function prototypes
 int fill_array(double[], int);
@@ -25,52 +25,52 @@ void reverse_array(double[], int);
 int main()
 {
     using namespace std;
-	double numbers[Max];
+    double numbers[MAX];
 
-	int size = fill_array(numbers, Max);
-	cout << "You typed:                 "; 
-	show_array(numbers, size);
-	cout << "After being reversed:      ";
-	reverse_array(numbers, size);
-	show_array(numbers, size);
-	cout << "Again except 1st and last: ";
-	reverse_array(numbers+1, size-2);
-	show_array(numbers, size);
+    int size = fill_array(numbers, MAX);
+    cout << "You typed:                 "; 
+    show_array(numbers, size);
+    cout << "After being reversed:      ";
+    reverse_array(numbers, size);
+    show_array(numbers, size);
+    cout << "Again except 1st and last: ";
+    reverse_array(numbers+1, size-2);
+    show_array(numbers, size);
 
     return 0;
 }
 
 int fill_array(double arr[], int max)
 {
-	using namespace std;
-	cout << "Enter up to " << max 
-		 << " numbers <q to terminate>\n";
-	cout << "#1: ";
-	int i = 0;
-	while (i < max && cin >> arr[i]) 
-	{
-		if (++i < max)
-			cout << "#" << i+1 << ": ";
+    using namespace std;
+    cout << "Enter up to " << max << " numbers <q to terminate>" << endl;
+    cout << "#1: ";
+    int i = 0;
+    while (i < max && cin >> arr[i]) {
+        if (++i < max) {
+            cout << "#" << i+1 << ": ";
 	}
-	return i;
+    }
+    return i;
 }
 
 void show_array(const double arr[], int size)
 {
-	using namespace std;
-	for (int i = 0; i < size; i++)
-		cout << arr[i] << "  ";
-	cout << endl;
+    using namespace std;
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << "  ";
+    }
+    cout << endl;
 }
 
 void reverse_array(double arr[], int size)
 {
-	double temp;
+    double temp;
     int i, j;
     for (j = 0, i = size - 1; j < i; --i, ++j)
-    {                       // start block
+    {   // start block
         temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-    } 
+    }
 }
