@@ -9,33 +9,35 @@ name.
 
 struct Pizza
 {
-	char company[20];
-	float diameter;
-	float weight;
+    char company[20];
+    double diameter;
+    double weight;
 };
 
 int main()
 {
-	using namespace std;
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	Pizza *analysis = new Pizza;
+    Pizza * pt_Pizza = new Pizza;
 
-	cout << "Enter the diameter of the pizza (in centimeters): ";
-	cin >> analysis->diameter;
-	cin.get();
-	cout << "Enter the name of the pizza company: ";
-	cin.getline(analysis->company, 20);
-	cout << "Enter the weight of the pizza (in grams): ";
-	cin >> analysis->weight;
+    cout << "Enter the diameter of the pizza (in centimeters): ";
+    cin >> pt_Pizza->diameter;
+    cin.get();
+    cout << "Enter the name of the pizza company: ";
+    cin.getline(pt_Pizza->company, 20);
+    cout << "Enter the weight of the pizza (in grams): ";
+    cin >> pt_Pizza->weight;
 
-	cout << "The name of the pizza company: " 
-		 << analysis->company << endl;
-	cout << "The diameter of the pizza: " 
-		 << analysis->diameter << " centimeters" << endl;
-	cout << "The weight of the pizza: " 
-		 << analysis->weight << " grams" << endl;
-	
-	delete analysis;
+    cout << "The name of the pizza company: ";
+    cout << pt_Pizza->company << endl;
+    cout << "The diameter of the pizza: ";
+    cout << pt_Pizza->diameter << " centimeters" << endl;
+    cout << "The weight of the pizza: ";
+    cout << pt_Pizza->weight << " grams" << endl;
 
-	return 0; 
+    delete pt_Pizza;
+
+    return 0; 
 }
