@@ -7,12 +7,13 @@ privacy, a fictitious name and address).
 
 int main()
 {
-	using namespace std; 
+    using std::cout;
+    using std::endl; 
 
-	cout << "Jan Novak" << endl;
-	cout << "Slovenska 10" << endl;
-	cout << "080 01 Bratislava" << endl;
-	cout << "Slovakia" << endl;
+    cout << "Jan Novak" << endl;
+    cout << "Slovenska 10" << endl;
+    cout << "080 01 Bratislava" << endl;
+    cout << "Slovakia" << endl;
 
-	return 0;
+    return 0;
 }
