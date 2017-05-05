@@ -11,18 +11,20 @@ represent the conversion factor.
 const int InchPerFoot = 12;
 
 int main()
-{  
-	using namespace std;
-	
-	cout << "Enter your height in inches: ___\b\b\b ";
-	int inches;
-	cin >> inches;
-	
-	int feet = inches / InchPerFoot;
-	int remInches = inches % InchPerFoot;
-	
-	cout << inches << " inches are " << feet
-		 << " feet and " << remInches << " inches." << endl;
+{
+    using std::cout;
+    using std::cin;
+    using std::endl;
+
+    cout << "Enter your height in inches: ___\b\b\b ";
+    int inches;
+    cin >> inches;
+    
+    int feet = inches / InchPerFoot;
+    int remInches = inches % InchPerFoot;
+
+    cout << inches << " inches are " << feet;
+    cout << " feet and " << remInches << " inches." << endl;
 	
     return 0; 
 }
