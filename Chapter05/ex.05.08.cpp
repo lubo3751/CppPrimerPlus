@@ -18,20 +18,22 @@ function to make the comparison test.
 
 int main()
 {
-	using namespace std;
+    using std::cout;
+    using std::cin;
+    using std::endl;
+	
+    cout << "Enter words (to stop, type the word done):" << endl;
+    char word[20];
+    cin >> word;
 
-	cout << "Enter words (to stop, type the word done):" << endl;
-	char word[20];
-	cin >> word;
+    int count = 0;
+    while(strcmp(word, "done"))
+    {
+        ++count;
+        cin >> word;
+    }
 
-	int count = 0;
-	while(strcmp(word, "done"))
-	{
-		++count;
-		cin >> word;
-	}
-
-	cout << "You entered a total of " << count << " words." << endl;	
+    cout << "You entered a total of " << count << " words." << endl;	
 
     return 0;
 }
