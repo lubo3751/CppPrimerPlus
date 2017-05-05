@@ -10,18 +10,20 @@ kilometers.
 #include <iostream>
 
 int main()
-{  
-	using namespace std;
-	
-	cout << "Enter how many miles you have driven: ";
-	double miles;
-	cin >> miles;
-	cout << "Enter how many gallons of gasoline your car has used: ";
-	double gallons;
-	cin >> gallons;
+{
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	double mpg = miles / gallons;
-	cout << "Your car drives " << mpg << " miles per gallon." << endl;
+    cout << "Enter how many miles you have driven: ";
+    double miles;
+    cin >> miles;
+    cout << "Enter how many gallons of gasoline your car has used: ";
+    double gallons;
+    cin >> gallons;
+
+    double mpg = miles / gallons;
+    cout << "Your car drives " << mpg << " miles per gallon." << endl;
 
     return 0; 
 }
