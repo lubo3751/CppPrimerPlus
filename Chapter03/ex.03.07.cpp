@@ -11,19 +11,21 @@ and 27 mpg is about 8.7 l/100 km.
 
 #include <iostream>
 
-float const M_in_100km = 62.14;  // miles in 100 kilometers
-float const L_in_g = 3.875;      // liters in a gallon
+const double MILES_IN_100KM = 62.14;
+const double LITERS_IN_GALON = 3.875;
 
 int main()
-{  
-	using namespace std;
-	
-	cout << "Enter automobile gasoline consumption in l/100km: ";
-	double lPerKm;
-	cin >> lPerKm;
+{
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	double mpg = M_in_100km / (lPerKm / L_in_g);	
-	cout << "It's " << int(mpg) << " mpg." << endl;
+    cout << "Enter automobile gasoline consumption in l/100km: ";
+    double liters_per_100km;
+    cin >> liters_per_100km;
+
+    double mpg = MILES_IN_100KM / (liters_per_100km / LITERS_IN_GALON);	
+    cout << "It's " << int(mpg) << " mpg." << endl;
 
     return 0; 
 }
