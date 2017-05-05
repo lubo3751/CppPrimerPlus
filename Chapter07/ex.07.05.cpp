@@ -13,21 +13,22 @@ long double factorial(int);
 int main()
 {
     using namespace std;
-	cout << "Enter a positive integer: ";
-	int number;
-	while (cin >> number && number >= 0)
-	{
-		cout << number << "! = " << factorial(number)
-			 << "\nEnter another positive integer <q to quit>: ";
-	}
-	cout << "Bye\n";
+    cout << "Enter a positive integer: ";
+    int number;
+    while (cin >> number && number >= 0)
+    {
+        cout << number << "! = " << factorial(number) << endl;
+        cout << "Enter another positive integer <q to quit>: ";
+    }
+    cout << "Bye" << endl;
     return 0;
 }
 
 long double factorial (int n)
 {
-    if ( n == 0 )
+    if ( n == 0 ) {
         return 1.0;
-    else
+    } else {
         return n * factorial (n - 1);
+    }
 }
