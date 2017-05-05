@@ -9,19 +9,15 @@ enters 0.
 
 int main()
 {
-	using namespace std;
-	
-	cout << "Enter a number (0 to quit) : ";
-	double number, sum = 0;
-	cin >> number;
-
-	while (number)
-	{
-		sum += number;
-		cout << "The cumulative sum is " << sum << endl;
-		cout << "Enter a number (o to quit) : ";
-		cin >> number;
-	}
-
+    std::cout << "Enter a number (0 to quit) : ";
+    double number, sum = 0;
+    std::cin >> number;
+    while (number)
+    {
+        sum += number;
+        std::cout << "The cumulative sum is " << sum << std::endl;
+        std::cout << "Enter a number (o to quit) : ";
+        std::cin >> number;
+    }
     return 0;
 }
