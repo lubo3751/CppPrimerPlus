@@ -14,8 +14,8 @@ conversion factors.
 
 #include <iostream>
 
-const double inch_to_m = 0.0254;
-const double lb_to_kg = 2.2;
+const double INCH_TO_M = 0.0254;
+const double LB_TO_KG = 2.2;
 
 int main()
 {
@@ -23,7 +23,7 @@ int main()
     using std::cin;
     using std::endl;
 
-    cout << "Enter your height in feet, and inches" << endl;	
+    cout << "Enter your height in feet, and inches." << endl;	
     cout << "First, enter the feet: _\b";
     double feet;
     cin >> feet;
@@ -35,11 +35,11 @@ int main()
     cin >> pounds;
 
     inches = inches + (feet * 12.0);
-    double meters = inches * inch_to_m;
-    double mass = pounds / lb_to_kg;
+    double meters = inches * INCH_TO_M;
+    double mass = pounds / LB_TO_KG;
 
     double bmi = mass / (meters * meters);
-    cout << "Your BMI is " << bmi << endl;
+    cout << "Your BMI is " << bmi << "." << endl;
 
     return 0; 
 }
