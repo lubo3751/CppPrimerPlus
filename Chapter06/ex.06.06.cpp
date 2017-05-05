@@ -1,72 +1,94 @@
-/* ex.06.06.cpp
-Put together a program that keeps track of monetary contributions to the Society
-for the Preservation of Rightful Influence. It should ask the user to enter the number
-of contributors and then solicit the user to enter the name and contribution of
-each contributor.The information should be stored in a dynamically allocated array
-of structures. Each structure should have two members: a character array (or else a
-string object) to store the name and a double member to hold the amount of the
-contribution.After reading all the data, the program should display the names and
-amounts donated for all donors who contributed $10,000 or more.This list should
-be headed by the label Grand Patrons.After that, the program should list the
-remaining donors.That list should be headed Patrons. If there are no donors in one
-of the categories, the program should print the word “none.”Aside from displaying
-two categories, the program need do no sorting.
-*/
-
 #include <iostream>
 #include <string>
 using namespace std;
 
-const int Limit = 10000;
+const int LIMIT = 10000;
 
 struct donor {
-	string name;
-	double amount;
+    string name;
+    double amount;
 };
 
 int main()
 {
-	// ask user how many donors
-	cout << "The Society for the Preservation of Rightful Influence\n"
-			"Enter the number of donors: ";
-	int n_donors;
-	(cin >> n_donors).get();
-	
-	//dynamically allocate array of structures
-	donor *donors = new donor[n_donors];
+    // ask user how many donors
+    cout << "The Society for the Preservation of Rightful Influence" << endl;
+    cout << "Enter the number of donors: ";
+    int num_of_donors;
+    (cin >> num_of_donors).get();
 
-	// initialize structure
-	for (int i = 0; i < n_donors; ++i) 
-	{
-		cout << "Enter the name of the donor #" << i + 1 << ": ";
-		getline(cin, donors[i].name);
-		cout << "Enter their contribution: ";
-		(cin >> donors[i].amount).get();
-	}
+    //dynamically allocate array of structures
+    donor * pt_donors = new donor[num_of_donors];
 
-	// display Grand Patrons
-	cout << "Grand Patrons:\n";
-	int counter = 0;
-	for (int i = 0; i < n_donors; ++i) {
-		if (donors[i].amount >= Limit) {
-			cout << donors[i].name << " donated $" << donors[i].amount << endl;
-			++counter;
-		}
-	}
-	if (!counter)
-		cout << "none\n";
+    // initialize structure
+    for (int i = 0; i < num_of_donors; ++i) 
+    {
+        // solicit and set name
+        cout << "Enter the name of the donor #" << i + 1 << ": ";
+        getline(cin, pt_donors[i].name);
+        while (pt_donors[i].name == "")
+        {
+            cout << "Error, nothing entered." << endl;
+            cout << "Enter the name of the donor #" << i + 1 << ": ";
+            getline(cin, pt_donors[i].name);
+        }
+        // solicit and set amount
+        while (1)
+        {
+            cout << "Enter their contribution: $";
+            cin >> pt_donors[i].amount;
 
-	// display Patrons
-	cout << "Patrons:\n";
-	counter = 0;
-	for (int i = 0; i < n_donors; ++i) {
-		if (donors[i].amount < Limit) {
-			cout << donors[i].name << endl;
-			++counter;
-		}
-	}
-	if (!counter)
-		cout << "none\n";
+            if (cin.fail())             // no extraction took place
+            {
+                cin.clear();            // clear error flags
+                cin.ignore(1000, '\n'); // clear bad input from the stream
+                cout << "Error. Invalid value entered." << endl;
+                continue;               // try again
+            }
+
+            cin.ignore(1000, '\n'); // clear additional input from the stream
+            if (cin.gcount() > 1)   // if more than one additional char cleared
+            {                       // we'll consider this input to be invalid
+                cout << "Error. Invalid value entered." << endl;
+                continue;           // try again
+            }
+
+            if (pt_donors[i].amount <= 0) // make sure input is positive
+            {
+                cout << "Error. Negative value entered." << endl;
+                continue;  // try again
+            }
+            break;
+        }
+    }    
+
+    // display Grand Patrons
+    cout << fixed << showpoint;
+    cout.precision(2);
+    cout << "Grand Patrons:" << endl;
+    int counter = 0;
+    for (int i = 0; i < num_of_donors; ++i) {
+        if (pt_donors[i].amount >= LIMIT) {
+            cout << pt_donors[i].name << " donated $" << pt_donors[i].amount << endl;
+            ++counter;
+        }
+    }
+    if (!counter) {
+        cout << "none" << endl;
+    }
+
+    // display Patrons
+    cout << "Patrons:" << endl;
+    counter = 0;
+    for (int i = 0; i < num_of_donors; ++i) {
+        if (pt_donors[i].amount < LIMIT) {
+            cout << pt_donors[i].name << endl;
+            ++counter;
+        }
+    }
+    if (!counter) {
+        cout << "none" << endl;
+    }
 
     return 0;
 }
