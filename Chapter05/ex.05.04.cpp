@@ -22,20 +22,21 @@ displays the value of both investments at that time.
 
 int main()
 {
-	using namespace std;
-	
-	double daphne = 110.0;
-	double cleo = 105.0;
-	int years;
-	for(years = 1; daphne > cleo; ++years)
+    using std::cout;
+    using std::endl;
+
+    double daphne = 110.0;
+    double cleo = 105.0;
+    int years;
+    for(years = 1; daphne > cleo; ++years)
     {
         daphne += 10.0;
         cleo *= 1.05;
     }
 
-	cout << "After " << years << " years..." << endl;
-	cout << "Daphne has $" << daphne << endl;
-	cout << "Cleo has $" << int(cleo) << endl; 
+    cout << "After " << years << " years..." << endl;
+    cout << "Daphne has $" << daphne << endl;
+    cout << "Cleo has $" << int(cleo) << endl; 
 
     return 0;
 }
