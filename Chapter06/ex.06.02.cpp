@@ -9,44 +9,47 @@ are larger than the average.
 #include <iostream>
 #include <array>
 
-const int Max = 10;
+const int MAX = 10;
 
 int main()
 {
     using namespace std;
-// get data
-	array<double, Max> donations;
-	cout << "Please enter the values of donations.\n";
-	cout << "You may enter up to " << Max
-		 << " values <non-numeric input to terminate>.\n";
-	cout << "Donation #1: ";
-	int i = 0;
-	while (i < Max && cin >> donations[i]) {
-		if (++i < Max)
-			cout << "donation #" << i+1 << ": ";
-	}
-// calculate average
-	double total = 0.0;
-	for (int j = 0; j < i; j++)
-		total += donations[j];
-	double average = total / i;
-// calculate number of values above average
-	int aboves = 0;
-	for (int j = 0; j < i; j++)
-		if (donations[j] > average)
-			++aboves;
-// report results
-	if (i == 0)
-		cout << "No donations\n";
-	else {
-		cout << average << " = average value of "
-			<< i << " donations\n";
-		if (aboves == 1)
-			cout << aboves << " value was above the average\n"; 
-		else	
-			cout << aboves << " values were above the average\n";
-	}
-	cout << "Done.\n";
-	
-	return 0; 
+    // get data
+    array<double, MAX> donations;
+    cout << "Please enter the values of donations." << endl;
+    cout << "You may enter up to " << MAX;
+    cout << " values <non-numeric input to terminate>." << endl;
+    cout << "Donation #1: ";
+    int i = 0;
+    while (i < MAX && cin >> donations[i]) {
+        if (++i < MAX) {
+            cout << "donation #" << i+1 << ": ";
+        }
+    }
+    // calculate average
+    double total = 0.0;
+    for (int j = 0; j < i; j++) {
+        total += donations[j];
+    }
+    double average = total / i;
+    // calculate number of values above average
+    int aboves = 0;
+    for (int j = 0; j < i; j++) {
+        if (donations[j] > average) {
+            ++aboves;
+        }
+    }
+    // report results
+    if (i == 0) {
+        cout << "No donations" << endl;
+    } else {
+        cout << average << " = average value of " << i << " donations" << endl;
+        if (aboves == 1) {
+            cout << aboves << " value was above the average" << endl;
+        } else {	
+            cout << aboves << " values were above the average" << endl;
+        }
+    }
+    cout << "Done." << endl;
+    return 0; 
 }
