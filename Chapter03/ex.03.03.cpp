@@ -15,28 +15,30 @@ Finally, enter the seconds of arc: 19
 
 #include <iostream>
 
-float const SecInMin = 60.0;
-float const MinInDeg = 60.0;
+const double SEC_IN_MIN = 60.0;
+const double MIN_IN_DEG = 60.0;
 
 int main()
-{  
-	using namespace std;
+{
+    using std::cout;
+    using std::cin;
+    using std::endl;
 
-	cout << "Enter a latitude in degrees, minutes, and seconds:" << endl;
-	cout << "First, enter the degrees: ";
-	float deg;
-	cin >> deg;
-	cout << "Next, enter the minutes of arc: ";
-	float min;
-	cin >> min;
-	cout << "Finally, enter the seconds of arc: ";
-	float sec;
-	cin >> sec;
+    cout << "Enter a latitude in degrees, minutes, and seconds." << endl;
+    cout << "First, enter the degrees: ";
+    double deg;
+    cin >> deg;
+    cout << "Next, enter the minutes of arc: ";
+    double min;
+    cin >> min;
+    cout << "Finally, enter the seconds of arc: ";
+    double sec;
+    cin >> sec;
 
-	float flDeg = deg + ((min + (sec / SecInMin) ) / MinInDeg);
+    double deg_total = deg + ((min + (sec / SEC_IN_MIN) ) / MIN_IN_DEG);
 
-	cout << deg << " degrees, " << min << " minutes, "
-		 << sec << " seconds = " << flDeg << " degrees" << endl; 
+    cout << deg << " degrees, " << min << " minutes, ";
+    cout << sec << " seconds = " << deg_total << " degrees" << endl; 
 
     return 0; 
 }
