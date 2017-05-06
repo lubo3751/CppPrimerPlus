@@ -13,25 +13,29 @@ Bye.
 
 #include <iostream>
 #include <string>
-using namespace std;
+#include <cctype>
 
-void to_upper(string &);
+void to_upper(std::string &);
 
 int main()
 {
+    using std::cout;
+    using std::cin;
+    using std::endl;
+    
     cout << "Enter a string (q to quit): ";
-    string text;
+    std::string text;
     while (getline(cin, text) && text != "q")
     {
         to_upper(text);
         cout << text << endl;
         cout << "Next string (q to quit): ";
     }
-    cout << "Bye.\n";
+    cout << "Bye." << endl;
     return 0;
 }
 
-void to_upper(string & s)
+void to_upper(std::string & s)
 {
     for (int i = 0; s[i]; ++i){
         s[i] = toupper(s[i]);
