@@ -15,13 +15,11 @@ T max5(const T ar[]);
 
 int main()
 {
-    using namespace std;
+    int integers[SIZE] = {4, 6, 2, 8, 1};
+    std::cout << "largest integer: " << max5(integers) << std::endl;
 
-    int iNums[SIZE] = {4, 6, 2, 8, 1};
-    cout << max5(iNums) << endl;
-
-    double dNums[SIZE] = {3.5, 6.3, 9.8, 1.3, 7.4};
-    cout << max5(dNums) << endl;
+    double doubles[SIZE] = {3.5, 6.3, 9.8, 1.3, 7.4};
+    std::cout << "largest double: " << max5(doubles) << std::endl;
 
     return 0;
 }
