@@ -27,10 +27,10 @@ int main()
     char testing[] = "Reality isn't what it used to be.";
 	
     set(beany, testing); // first argument is a reference,
-    // allocates space to hold copy of testing,
-    // sets str member of beany to point to the
-    // new block, copies testing to new block,
-    // and sets ct member of beany
+            // allocates space to hold copy of testing,
+            // sets str member of beany to point to the
+            // new block, copies testing to new block,
+            // and sets ct member of beany
     show(beany); // prints member string once
     show(beany, 2); // prints member string twice
     testing[0] = 'D';
@@ -43,19 +43,19 @@ int main()
     return 0;
 }
 
-void set(stringy & rStrc, const char ca[])
+void set(stringy & s, const char c[])
 {
-    int len = strlen(ca);            // length of testing 
-    char * pca = new char [len+1];   // space to hold copy of testing
-    rStrc.str = pca;                 // str member of beany points to the new block
-    strcpy(pca, ca);        // copy testing to the new block
-    rStrc.ct = len;                  // sets ct member of beany
+    int len = strlen(c);            // length of testing 
+    char * pc = new char [len+1];   // space to hold copy of testing
+    s.str = pc;                 // str member of beany points to the new block
+    strcpy(pc, c);        // copy testing to the new block
+    s.ct = len;                  // sets ct member of beany
 }
 
-void show(const stringy & rStrc, int repeat)
+void show(const stringy & s, int repeat)
 {
     for (int i = 0; i < repeat; ++i){
-        cout << rStrc.str << endl;
+        cout << s.str << endl;
     }
 }
 
