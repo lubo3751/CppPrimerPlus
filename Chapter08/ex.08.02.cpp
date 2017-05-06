@@ -20,40 +20,37 @@ struct CandyBar
     int calories;
 };
 
-void show(const CandyBar &);
-void set(CandyBar &, const char * s = "Millennium Munch", double w = 2.85, int c = 350);
+void set_CandyBar(CandyBar &, const char * s = "Millennium Munch", 
+                           double w = 2.85, int c = 350);
+void show_CandyBar(const CandyBar &);
 
 int main()
 {
-    using namespace std;
-    CandyBar snack;
-    char name[] = "Snikers";
-    double weight = 2.75;
-    int calories = 345;
+    CandyBar candy_bar;
+    const char * brand = "Snikers";
+    const double weight = 1.66;
+    const int calories = 229;
 
-    set(snack);
-    show(snack);
-    set(snack, name, weight, calories);
-    show(snack);
-    set(snack);
-    show(snack);
-    set(snack, name, weight, calories);
-    show(snack);
+    set_CandyBar(candy_bar);
+    show_CandyBar(candy_bar);
+    std::cout << std::endl;
+    set_CandyBar(candy_bar, brand, weight, calories);
+    show_CandyBar(candy_bar);
+    std::cout << std::endl;
 
     return 0;
 }
 
-void set(CandyBar & candy, const char * s, double w, int c)
+void set_CandyBar(CandyBar & cb, const char * s, double w, int c)
 {
-    candy.brand = s;
-    candy.weight = w;
-    candy.calories = c;
+    cb.brand = s;
+    cb.weight = w;
+    cb.calories = c;
 }
 
-void show(const CandyBar & candy)
+void show_CandyBar(const CandyBar & cb)
 {
-    using namespace std;
-    cout << "brand name: " << candy.brand << endl
-    cout << "weight: " << candy.weight << endl
-    cout << "calories: " << candy.calories << endl;
+    std::cout << "brand name: " << cb.brand << std::endl;
+    std::cout << "weight: " << cb.weight << " oz" << std::endl;
+    std::cout << "calories: " << cb.calories << std::endl;
 }
