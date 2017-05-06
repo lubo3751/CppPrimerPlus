@@ -21,22 +21,23 @@ char * maxn<char *>(char * ar[], int);
 
 int main()
 {
-    using namespace std;
+    using std::cout;
+    using std::endl;
 
-    int iNums[6] = {4, 6, 2, 8, 1, 7};
-    cout << maxn(iNums, 6) << endl;
+    int integers[6] = {4, 6, 2, 8, 1, 7};
+    cout << "largest integer: " << maxn(integers, 6) << endl;
 
-    double dNums[4] = {3.5, 6.3, 9.8, 1.3};
-    cout << maxn(dNums, 4) << endl;
+    double doubles[4] = {3.5, 6.3, 9.8, 1.3};
+    cout << "largest double: " << maxn(doubles, 4) << endl;
 
-    char * pStr[] = {
+    char * ar_pt_str[] = {
         "bla bla", 
         "bla", 
         "bla bla bla", // 11 characters
         "What's up??", // 11 characters
         "I see"
     }; 
-    cout << maxn(pStr, 5) << endl;
+    cout << "longest string: " << maxn(ar_pt_str, 5) << endl;
 
     return 0;
 }
