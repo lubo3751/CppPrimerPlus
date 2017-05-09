@@ -8,15 +8,13 @@ namespace SALES
     void setSales(Sales & s, const double ar[], int n)
     {
         n = n < QUARTERS ? n : QUARTERS;    // avoid buffer overflow
-		
-        // set all members of s to 0
-        s.max = s.min = ar[0];
+	s.max = s.min = ar[0];	
+        // set members of s to 0
         s.average = 0;
         for (int i = 0; i < QUARTERS; i++){
             s.sales[i] = 0;
         }
-		
-        // set all members of s to new values
+        // set members of s to new values
         for (int i = 0; i < n; i++) 
         {
             s.sales[i] = ar[i];
