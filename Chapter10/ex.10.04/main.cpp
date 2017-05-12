@@ -18,5 +18,5 @@ int main(void)
     std::cout << "Sales 2";
     s2.showSales();
 
-	return 0;
+    return 0;
 }
