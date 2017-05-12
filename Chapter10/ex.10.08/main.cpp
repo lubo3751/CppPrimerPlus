@@ -14,9 +14,11 @@ int main()
     show_menu();
     char choice;
     solicit_choice(&choice);
-    while (choice != 'Q' && choice != 'q') {
-	    switch(choice) {
-		    case 'a':
+    while (choice != 'Q' && choice != 'q') 
+    {
+        switch(choice) 
+        {
+            case 'a':
             case 'A': if (list.isfull())
                           cout << "Maximum number of accounts reached.\n\n";
                       else {
@@ -24,15 +26,15 @@ int main()
                           list.add(account);
                       }
                       break;
-		    case 'b':
-		    case 'B': if (list.isempty())
+            case 'b':
+            case 'B': if (list.isempty())
                           cout << "No account created.\n\n";
                       else {
                           list.visit(add_interest);
                           cout << "Interest added.\n\n";
                       }
-			          break;
-		    case 'c':
+                      break;
+            case 'c':
             case 'C': if (list.isempty())
                           cout << "No account created.\n\n";
                       else {
@@ -40,10 +42,10 @@ int main()
                           cout << endl;
                       }
                       break;
-		    default : cout << "That's not a choice.\n";
-				      show_menu();
-				      cin.get(choice).get();
-				      continue;
+            default : cout << "That's not a choice.\n";
+                      show_menu();
+                      cin.get(choice).get();
+                      continue;
         }
         show_menu();
         solicit_choice(&choice);
