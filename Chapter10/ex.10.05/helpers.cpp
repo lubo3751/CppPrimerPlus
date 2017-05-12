@@ -12,9 +12,9 @@ char * get_name()
     while (strlen(name) == 0)
     {
         cin.clear();
-	    cin.get();
-	    cout << "Error, nothing entered.\n"
-	         << "Enter a customer full name: ";
+        cin.get();
+        cout << "Error, nothing entered.\n"
+             << "Enter a customer full name: ";
         cin.get(name, LEN);
     }
     return name;
