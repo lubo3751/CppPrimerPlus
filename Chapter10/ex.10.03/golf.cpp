@@ -10,20 +10,20 @@ Golf::Golf(char * name, int hc)
 
 int Golf::setgolf()
 {
-	using std::cout;
-	using std::cin;
-	using std::endl;
+    using std::cout;
+    using std::cin;
+    using std::endl;
     // solicit fullname
     cout << "Enter a fullname: ";
-	char fn[LEN] = "";
+    char fn[LEN] = "";
     cin.getline(fn, LEN);
-	if (fn[0] == '\0') {  // stop imput
-		return 0;
-	}
+    if (fn[0] == '\0') {  // stop imput
+        return 0;
+    }
     // solicit handicap
     int hc;
-	while (1)
-	{
+    while (1)
+    {
         cout << "Enter a handicap: ";
         cin >> hc;
         if (cin.fail())             // no extraction took place
