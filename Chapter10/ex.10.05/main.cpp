@@ -7,6 +7,7 @@
 int main()
 {
     using namespace std;
+    using namespace STACK;
     Stack st; // create an empty stack
     char ch;
     customer cust;
