@@ -5,6 +5,7 @@
 
 int main()
 {
+    using namespace PLORG;
     Plorg p1;
     p1.report();
     p1.reset_ci(33);

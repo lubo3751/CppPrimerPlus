@@ -2,16 +2,19 @@
 #ifndef PLORG_H_
 #define PLORG_H_
 
-class Plorg
+namespace PLORG
 {
-private:
-    static const int MAX = 19;
-    char m_name[MAX];
-    int m_ci; // contentment index
-public:
-    Plorg(char name[] = "Plorga", int ci = 50);
-    void reset_ci(int ci);
-    void report();
-};
+    class Plorg
+    {
+    private:
+        static const int MAX = 19;
+        char m_name[MAX];
+        int m_ci; // contentment index
+    public:
+        Plorg(char name[] = "Plorga", int ci = 50);
+        void reset_ci(int ci);
+        void report();
+    }; 
+}
 
 #endif

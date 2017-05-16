@@ -3,18 +3,21 @@
 #include <cstring>
 #include "plorg.h"
 
-Plorg::Plorg(char name[], int ci)
+namespace PLORG
 {
-    strcpy_s(m_name, 19, name);
-    m_ci = ci;
-}
+    Plorg::Plorg(char name[], int ci)
+    {
+        strcpy_s(m_name, 19, name);
+        m_ci = ci;
+    }
 
-void Plorg::reset_ci(int ci)
-{
-    m_ci = ci;
-}
+    void Plorg::reset_ci(int ci)
+    {
+        m_ci = ci;
+    }
 
-void Plorg::report()
-{
-    std::cout << "name: " << m_name << "\nCI: " << m_ci << "\n\n";
+    void Plorg::report()
+    {
+        std::cout << "name: " << m_name << "\nCI: " << m_ci << "\n\n";
+    } 
 }
