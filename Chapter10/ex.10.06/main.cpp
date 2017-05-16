@@ -5,6 +5,7 @@
 
 int main()
 {
+    using namespace MOVE;
     Move m1;
     m1.showmove();
     m1.reset(4.5, 7.3);

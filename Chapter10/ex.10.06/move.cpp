@@ -2,24 +2,27 @@
 #include <iostream>
 #include "move.h"
 
-Move::Move(double a, double b)
+namespace MOVE
 {
-    x = a;
-    y = b;
-}
+    Move::Move(double a, double b)
+    {
+        x = a;
+        y = b;
+    }
 
-void Move::showmove() const
-{
-    std::cout << "x = " << x << std::endl;
-    std::cout << "y = " << y << std::endl << std::endl;
-}
+    void Move::showmove() const
+    {
+        std::cout << "x = " << x << std::endl;
+        std::cout << "y = " << y << std::endl << std::endl;
+    }
 
-Move Move::add(const Move & m) const
-{
-    return Move(x + m.x, y + m.y); 
-}
+    Move Move::add(const Move & m) const
+    {
+        return Move(x + m.x, y + m.y); 
+    }
 
-void Move::reset(double a, double b)
-{
-    *this = Move(a, b);
+    void Move::reset(double a, double b)
+    {
+        *this = Move(a, b);
+    } 
 }
