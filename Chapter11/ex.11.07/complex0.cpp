@@ -1,6 +1,5 @@
 // complex0.cpp -- complex class implementation
-#include <iostream>
-#include "complex0.h"
+#include "complex0.h"   // includes <iostream>
 
 // constructor
 complex::complex(double o, double t)
